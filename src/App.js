@@ -14,6 +14,7 @@ class App extends Component {
     }
     
  this.changehandle=this.changehandle.bind(this);
+ this.buthandle=this.buthandle.bind(this);
 
   }
 
@@ -22,8 +23,9 @@ this.setState( {term : e.target.value})
 
 }
 
-buthandle(e){
-
+buthandle(event){
+  alert("hello");
+  event.preventDefault();
 }
 
 
@@ -32,7 +34,7 @@ buthandle(e){
       <div className="App">
         <form>
           <input type="text" onChange={this.changehandle} value={this.state.term}/>
-          <button onClick={() => this.buthandle.bind(this)}>Click</button>
+          <button onClick={this.buthandle}>Click</button>
         </form>
         <Greet name="vikas"/>
         <Clascomp/>
